@@ -23,3 +23,6 @@ body,
 .el-cascader-panel {
   height: 200px;
 }
+.el-scrollbar__warp {
+  overflow: auto !important;
+}
