@@ -21,8 +21,19 @@ body,
   margin-top: 15px;
 }
 .el-cascader-panel {
-  height: 200px;
+  height: 270px;
 }
-.el-scrollbar__warp {
-  overflow: auto !important;
+.el-steps {
+  margin: 15px 0;
+}
+/* 隐藏横向滚动条 */
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+
+.el-step__title {
+  font-size: 13px;
+}
+.ql-editor {
+  min-height: 300px;
 }
