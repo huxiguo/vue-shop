@@ -189,7 +189,6 @@ export default {
         })
       }
       this.progressInfo = res.data
-      console.log(this.progressInfo)
       this.progressVisible = true
     }
   }

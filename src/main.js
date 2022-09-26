@@ -15,13 +15,22 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 
+import nProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 引入axios
 import axios from 'axios'
 axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
+
 axios.interceptors.request.use((config) => {
+  nProgress.start()
   // Do something before request is sent
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 必须return
+  return config
+})
+axios.interceptors.response.use(config => {
+  nProgress.done()
   return config
 })
 Vue.prototype.$http = axios
