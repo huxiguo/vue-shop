@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -20,7 +21,7 @@ import 'nprogress/nprogress.css'
 
 // 引入axios
 import axios from 'axios'
-axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://110.40.205.186:8889/api/private/v1/'
 
 axios.interceptors.request.use((config) => {
   nProgress.start()
@@ -37,7 +38,7 @@ Vue.prototype.$http = axios
 Vue.config.productionTip = false
 Vue.component('tree-table', TreeTable)
 Vue.use(VueQuillEditor)
-Vue.filter('dateFormat', function(originVal) {
+Vue.filter('dateFormat', function (originVal) {
   const dt = new Date(originVal * 1000)
   const y = dt.getFullYear()
   const m = (dt.getMonth() + 1 + '').padStart(2, '0')
